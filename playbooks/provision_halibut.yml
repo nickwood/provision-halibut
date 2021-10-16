@@ -1,0 +1,8 @@
+- name: Provision Halibut
+  hosts: localhost
+  connection: local 
+  gather_facts: no
+  become: yes
+  roles:
+    # - { role: config }
+    - { role: pacman }
