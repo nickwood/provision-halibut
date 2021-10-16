@@ -6,3 +6,4 @@
   roles:
     # - { role: config }
     - { role: pacman }
+    - { role: code42 }

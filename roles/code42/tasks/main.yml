@@ -1,0 +1,19 @@
+---
+### Reworked from here: https://github.com/grimmjow8/ansible-crashplan/
+- name: create download directory
+  file: path="{{ code42_dl_path }}" state=directory
+  # when: False
+
+- name: download code42 tarball
+  get_url:
+    url: "{{ code42_url }}"
+    dest: "{{ code42_dl_path }}"
+    validate_certs: no
+  # when: False
+
+- name: extract code42
+  unarchive: 
+    src: "{{ code42_extract_src }}" 
+    dest: "{{ code42_extract_dest }}"
+    remote_src: yes
+  # when: cp_installed.stat.exists == False

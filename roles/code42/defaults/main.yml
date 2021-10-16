@@ -1,0 +1,7 @@
+---
+code42_archive_filename: "Code42server_8.2.6_Linux.tgz"
+code42_dl_path: "/tmp/code42/"
+code42_url: "https://download.code42.com/installs/server/onprem/8.2.6/9/install/{{code42_archive_filename}}"
+
+code42_extract_src: "{{ code42_dl_path }}/{{ code42_archive_filename }}"
+code42_extract_dest: "{{ code42_dl_path }}"
