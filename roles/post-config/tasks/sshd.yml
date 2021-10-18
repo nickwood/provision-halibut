@@ -1,0 +1,18 @@
+---
+- name: Copy sshd config
+  copy: 
+    src: files/sshd_config
+    dest: /etc/ssh/sshd_config
+    force: yes
+
+- name: Copy authorized keys
+  copy: 
+    src: files/authorized_keys
+    dest: /home/nick/.ssh/authorized_keys
+    owner: nick
+    force: yes
+
+- name: Start sshd servce
+  ansible.builtin.systemd:
+    state: started
+    name: sshd
