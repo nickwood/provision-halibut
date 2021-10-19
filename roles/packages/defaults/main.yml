@@ -1,0 +1,26 @@
+---
+package_test: packages.rb
+package_test_results_file: 'package-results.txt'
+
+pacman_packages:
+# misc
+  - base-devel
+  - curl
+  - fakeroot
+  - firefox
+  - htop
+  - iotop
+  - openssh
+  - tigervnc
+  - wget
+# games
+  - retroarch
+  - retroarch-assets-xmb
+  - steam
+# media
+  - transmission-cli
+  - vlc
+
+# aur_packages:
+#   - xrdp
+#   - xorgxrdp-glamor

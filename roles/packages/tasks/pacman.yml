@@ -5,15 +5,14 @@
     dest: /etc/pacman.d/mirrorlist
     force: yes
 
-- name: Update Pacman
+- name: Update Pacman & packages
   pacman:
     update_cache: yes
+    upgrade: yes
 
 - name: Install Packages
   pacman:
     name: '{{ item }}'
     state: present
-  with_items:
-    - '{{ must_haves }}'
+  with_items: '{{ pacman_packages }}'
   ignore_errors: yes
-

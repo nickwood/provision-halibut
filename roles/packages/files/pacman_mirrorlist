@@ -1,7 +1,11 @@
-##
+########################################
+##                                    ##
+##  Manged by Ansible, Do not modify  ##
+##                                    ##
+########################################
+
 ## Arch Linux repository mirrorlist
 ## Generated on 2021-10-16
-##
 
 ## United Kingdom
 Server = http://archlinux.uk.mirror.allworldit.com/archlinux/$repo/os/$arch
