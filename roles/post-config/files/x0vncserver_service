@@ -1,8 +1,13 @@
 [Unit]
 Description=Remote desktop service (VNC)
+StartLimitInterval=200
+StartLimitBurst=5
 
 [Service]
 Type=simple
+Restart=always
+RestartSec=10
+
 # No security needed as it can only be accessed via local host on port 5900
 ExecStart=/usr/bin/x0vncserver -localhost -SecurityTypes none
 
