@@ -12,7 +12,8 @@
     owner: nick
     force: yes
 
-- name: Start sshd servce
+- name: Start sshd service
   ansible.builtin.systemd:
+    enabled: yes
     state: started
-    name: sshd
+    name: sshd.service
