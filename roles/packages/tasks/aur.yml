@@ -18,11 +18,11 @@
 #   become: yes
 #   become_user: aur_builder
 
-# - name: Install aur packages
-#   kewlfft.aur.aur:
-#     name: '{{ item }}'
-#     use: auto
-#     state: present
-#   with_items: '{{ aur_packages }}'
-#   become: yes
-#   become_user: aur_builder
+- name: Install aur packages
+  kewlfft.aur.aur:
+    name: '{{ item }}'
+    use: auto
+    state: present
+  with_items: '{{ aur_packages }}'
+  become: yes
+  become_user: aur_builder

@@ -1,0 +1,5 @@
+- name: Start crashplan service
+  ansible.builtin.systemd:
+    enabled: yes
+    state: started
+    name: crashplan-pro.service

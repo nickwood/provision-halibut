@@ -21,6 +21,5 @@ pacman_packages:
   - transmission-cli
   - vlc
 
-# aur_packages:
-#   - xrdp
-#   - xorgxrdp-glamor
+aur_packages:
+- crashplan-pro

@@ -4,7 +4,5 @@
   gather_facts: no
   become: yes
   roles:
-    # - { role: config }
     - { role: packages }
-    # - { role: code42 }
     - { role: post-config }

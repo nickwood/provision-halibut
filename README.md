@@ -1,7 +1,7 @@
 # Provisioning Arch/Manjaro Linux
 
  * `sudo pacman -Syy ansible`
- * `ansible-galaxy collection install -r requirements.yml`
- * `ansible-playbook playbooks/provision_halibut.yml`
+ * `sudo ansible-galaxy collection install -r requirements.yml`
+ * `sudo ansible-playbook playbooks/provision_halibut.yml`
 
 
