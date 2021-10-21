@@ -12,7 +12,6 @@
 
 - name: Install Packages
   pacman:
-    name: '{{ item }}'
+    name: '{{ pacman_packages }}'
     state: present
-  with_items: '{{ pacman_packages }}'
   ignore_errors: yes
