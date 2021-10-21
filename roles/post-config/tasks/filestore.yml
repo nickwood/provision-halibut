@@ -1,0 +1,17 @@
+---
+- name: Mount filestore
+  ansible.posix.mount:
+    path: /filestore
+    src: UUID=97fc1811-9969-41d0-a273-2faed12775ca
+    fstype: btrfs
+    opts: subvol=@filestore,defaults,noatime,space_cache=v2,autodefrag
+    state: mounted
+
+- name: Create a symbolic link
+  ansible.builtin.file:
+    src: /filestore/media
+    dest: /home/nick/media
+    owner: nick
+    group: nick
+    state: link
+    force: yes
