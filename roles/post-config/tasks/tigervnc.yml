@@ -4,13 +4,13 @@
     path: /etc/systemd/user
     state: directory
 
-- name: Create user service for vncserver keys
+- name: Create user service for vncserver
   copy: 
     src: files/x0vncserver_service
     dest: /etc/systemd/user/x0vncserver.service
     force: yes
 
-- name: Start vncservershd servce
+- name: Start vncservershd serivce
   ansible.builtin.systemd:
     enabled: yes
     state: started
@@ -21,4 +21,3 @@
     DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
   become: yes
   become_user: nick
-
