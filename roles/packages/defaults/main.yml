@@ -12,6 +12,7 @@ pacman_packages:
   - iotop
   - openssh
   - tigervnc
+  - screen
   - wget
 # games
   - retroarch
