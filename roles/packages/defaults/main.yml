@@ -27,3 +27,4 @@ aur_packages:
 - btrfsmaintenance
 - crashplan-pro
 - libretro-snes9x-git
+- sc-controller
