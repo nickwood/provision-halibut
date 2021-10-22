@@ -1,8 +1,9 @@
 - name: Provision Halibut
   hosts: halibut.lan
+  # hosts: localhost
+  # connection: local 
   become: yes
   roles:
     - { role: packages }
     - { role: post-config }
-  # connection: local 
-  # gather_facts: no
+  gather_facts: no
