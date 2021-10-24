@@ -1,0 +1,4 @@
+[Service]
+User=deluge
+Group=media
+UMask=002

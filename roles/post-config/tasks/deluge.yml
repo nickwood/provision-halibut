@@ -1,0 +1,51 @@
+---
+- name: Create deluge user and add to media
+  user:
+    name: deluge
+    state: present
+    group: media
+
+- name: Stop Service if exists
+  ansible.builtin.systemd:
+    name: deluged.service
+    state: stopped
+  ignore_errors: yes
+
+- name: Create config directory
+  file:
+    path: /srv/deluge/.config/deluge/
+    state: directory
+    owner: deluge
+    group: media
+    mode: 0775
+
+- name: Copy deluged config
+  copy: 
+    src: files/deluged_config
+    dest: /srv/deluge/.config/deluge/core.conf
+    force: yes
+    owner: deluge
+    group: media
+    mode: 0664
+
+- name: Copy deluged.service.d/user.conf
+  copy: 
+    src: files/deluged_user_conf
+    dest: /usr/lib/systemd/system/deluged.service.d/user.conf
+    force: yes
+
+- name: Create user password for deluged remote
+  copy:
+    src: files/deluge_auth
+    dest: /srv/deluge/.config/deluge/auth
+    force: yes
+    owner: deluge
+    group: media
+    mode: 0664
+
+- name: Start and enable deluged serivce
+  ansible.builtin.systemd:
+    daemon_reload: yes
+    enabled: yes
+    state: started
+    name: deluged.service

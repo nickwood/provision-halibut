@@ -19,7 +19,7 @@ pacman_packages:
   - retroarch-assets-xmb
   - steam
 # media
-  - transmission-cli
+  - deluge
   - vlc
 
 aur_packages:

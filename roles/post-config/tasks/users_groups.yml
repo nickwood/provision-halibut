@@ -1,0 +1,16 @@
+---
+- name: Create "media" group
+  group:
+    name: media
+    state: present
+
+- name: Ensure nick belongs to media
+  user:
+    name: nick
+    group: media
+
+- name: Create deluge user and add to media
+  user:
+    name: deluge
+    state: present
+    group: media

@@ -1,5 +1,5 @@
 ---
-- name: Copy file to a remote machine 
+- name: Update pacman mirrorlist 
   copy: 
     src: files/pacman_mirrorlist
     dest: /etc/pacman.d/mirrorlist

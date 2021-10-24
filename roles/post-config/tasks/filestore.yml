@@ -7,7 +7,7 @@
     opts: subvol=@filestore,defaults,noatime,space_cache=v2,autodefrag
     state: mounted
 
-- name: Create a symbolic link
+- name: Create a symbolic link for media
   ansible.builtin.file:
     src: /filestore/media
     dest: /home/nick/media
