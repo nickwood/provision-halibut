@@ -1,0 +1,25 @@
+########################################
+##                                    ##
+##  Manged by Ansible, Do not modify  ##
+##                                    ##
+########################################
+
+valid users = nick
+
+[media]
+  comment = halibut
+  path = /filestore/media
+  browsable = yes
+  readonly = no
+  create mask = 0700
+  directory mask = 0700
+  valid users = nick
+
+[backups]
+  comment = backups on halibut
+  path = /filestore/Backups
+  browsable = yes
+  readonly = no
+  create mask = 0700
+  directory mask = 0700
+  valid users = nick

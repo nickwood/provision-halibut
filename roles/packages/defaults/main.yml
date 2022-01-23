@@ -8,6 +8,7 @@ pacman_packages:
   - curl
   - fakeroot
   - firefox
+  - git
   - htop
   - iotop
   - openssh
@@ -20,6 +21,7 @@ pacman_packages:
   - steam
 # media
   - deluge
+  - samba
   - vlc
 
 aur_packages:
@@ -27,4 +29,5 @@ aur_packages:
 - btrfsmaintenance
 - crashplan-pro
 - libretro-snes9x-git
-- sc-controller
+- yay
+# - sc-controller

@@ -1,0 +1,15 @@
+---
+
+### don't forget to run `smbpasswd -a nick` to set user password
+
+- name: Copy smb conf config
+  copy: 
+    src: files/smb_conf
+    dest: /etc/samba/smb.conf
+    force: yes
+
+- name: Start samba service
+  ansible.builtin.systemd:
+    enabled: yes
+    state: started
+    name: smb.service
