@@ -25,7 +25,7 @@
     "listen_interface": "",
     "listen_ports": [
         6881,
-        6881
+        6891
     ],
     "listen_random_port": 53057,
     "listen_reuse_port": true,
@@ -61,7 +61,7 @@
     "path_chooser_show_hidden_files": false,
     "path_chooser_show_path_entry": true,
     "peer_tos": "0x00",
-    "plugins_location": "/srv/deluge/.config/deluge/plugins",
+    "plugins_location": "/var/lib/deluged/config/plugins",
     "pre_allocate_storage": true,
     "prioritize_first_last_pieces": false,
     "proxy": {
@@ -90,7 +90,7 @@
     "stop_seed_at_ratio": true,
     "stop_seed_ratio": 0.5,
     "super_seeding": false,
-    "torrentfiles_location": "/srv/deluge/Downloads",
+    "torrentfiles_location": "/var/lib/deluged/config/torrentfiles",
     "upnp": true,
     "utpex": true
 }

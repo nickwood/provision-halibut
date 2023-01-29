@@ -11,18 +11,35 @@
     state: stopped
   ignore_errors: yes
 
-# - name: Create config directory
-#   file:
-#     path: /srv/deluge/.config/deluge/
-#     state: directory
-#     owner: deluge
-#     group: media
-#     mode: 0775
+- name: Create config directory
+  file:
+    path: /var/lib/deluged
+    state: directory
+    owner: deluge
+    group: media
+    mode: 0775
+
+- name: Create config directory
+  file:
+    path: /var/lib/deluged/config
+    state: directory
+    owner: deluge
+    group: media
+    mode: 0775
 
 - name: Copy deluged config
   copy: 
     src: files/deluged_config
     dest: /var/lib/deluged/config/core.conf
+    force: yes
+    owner: deluge
+    group: media
+    mode: 0664
+
+- name: Create user password for deluged remote
+  copy:
+    src: files/deluge_auth
+    dest: /var/lib/deluged/config/auth
     force: yes
     owner: deluge
     group: media
@@ -34,14 +51,16 @@
     dest: /etc/systemd/system/deluged.service
     force: yes
 
-- name: Create user password for deluged remote
-  copy:
-    src: files/deluge_auth
-    dest: /var/lib/deluged/config/auth
+- name: Create user-service directory
+  file:
+    path: /etc/systemd/system/deluged.service.d/
+    state: directory
+
+- name: Copy deluged.service user override
+  copy: 
+    src: files/deluged.service.user_conf
+    dest: /etc/systemd/system/deluged.service.d/user.conf
     force: yes
-    owner: deluge
-    group: media
-    mode: 0664
 
 - name: Start and enable deluged serivce
   ansible.builtin.systemd:

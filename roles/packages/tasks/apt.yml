@@ -7,11 +7,10 @@
 - name: Install a list of packages
   ansible.builtin.apt:
     pkg:
-    # - base-devel
+    - btrfsmaintenance
     - curl
     - deluge
     - deluged
-    # - fakeroot
     - firefox
     - git
     - htop
@@ -19,6 +18,7 @@
     - openssh-server
     - samba
     - screen
+    - smartmontools
     - steam
     - vlc
     - wget

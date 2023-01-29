@@ -1,7 +1,7 @@
 - name: Provision Halibut
-  # hosts: halibut.lan
-  hosts: localhost
-  connection: local 
+  hosts: halibut.lan
+  # hosts: localhost
+  # connection: local 
   become: yes
   roles:
     - { role: packages }

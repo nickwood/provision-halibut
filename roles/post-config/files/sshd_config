@@ -8,5 +8,5 @@ AuthorizedKeysFile	.ssh/authorized_keys
 KbdInteractiveAuthentication no
 UsePAM yes
 PrintMotd no # pam does that
-Subsystem	sftp	/usr/lib/ssh/sftp-server
+Subsystem	sftp	/usr/lib/openssh/sftp-server
 AuthenticationMethods publickey
