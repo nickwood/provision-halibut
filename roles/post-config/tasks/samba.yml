@@ -12,4 +12,4 @@
   ansible.builtin.systemd:
     enabled: yes
     state: started
-    name: smb.service
+    name: smbd.service

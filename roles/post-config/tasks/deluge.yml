@@ -11,33 +11,33 @@
     state: stopped
   ignore_errors: yes
 
-- name: Create config directory
-  file:
-    path: /srv/deluge/.config/deluge/
-    state: directory
-    owner: deluge
-    group: media
-    mode: 0775
+# - name: Create config directory
+#   file:
+#     path: /srv/deluge/.config/deluge/
+#     state: directory
+#     owner: deluge
+#     group: media
+#     mode: 0775
 
 - name: Copy deluged config
   copy: 
     src: files/deluged_config
-    dest: /srv/deluge/.config/deluge/core.conf
+    dest: /var/lib/deluged/config/core.conf
     force: yes
     owner: deluge
     group: media
     mode: 0664
 
-- name: Copy deluged.service.d/user.conf
+- name: Copy deluged.service
   copy: 
-    src: files/deluged_user_conf
-    dest: /usr/lib/systemd/system/deluged.service.d/user.conf
+    src: files/deluged.service
+    dest: /etc/systemd/system/deluged.service
     force: yes
 
 - name: Create user password for deluged remote
   copy:
     src: files/deluge_auth
-    dest: /srv/deluge/.config/deluge/auth
+    dest: /var/lib/deluged/config/auth
     force: yes
     owner: deluge
     group: media

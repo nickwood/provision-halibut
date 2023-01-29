@@ -1,8 +1,7 @@
 ---
 - include_tasks: users_groups.yml
-- include_tasks: crashplan.yml
+# - include_tasks: crashplan.yml
 - include_tasks: sshd.yml
-- include_tasks: tigervnc.yml
 - include_tasks: filestore.yml
 - include_tasks: deluge.yml
 - include_tasks: samba.yml

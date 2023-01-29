@@ -1,0 +1,24 @@
+---
+- name: Only run "update_cache=yes" if the last one is more than 3600 seconds ago
+  ansible.builtin.apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Install a list of packages
+  ansible.builtin.apt:
+    pkg:
+    # - base-devel
+    - curl
+    - deluge
+    - deluged
+    # - fakeroot
+    - firefox
+    - git
+    - htop
+    - iotop
+    - openssh-server
+    - samba
+    - screen
+    - steam
+    - vlc
+    - wget

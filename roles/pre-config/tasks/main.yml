@@ -1,5 +1,0 @@
----
-- name: ensure we have directory for user services
-  file:
-    path: /etc/systemd/user
-    state: directory
